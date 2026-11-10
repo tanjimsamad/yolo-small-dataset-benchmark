@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it."
+title: "Four small YOLO detectors on a 204-photograph dataset"
+authors:
+  - family-names: Swapnil
+    given-names: Tanjim Samad
+date-released: 2026-11-10
+license: MIT

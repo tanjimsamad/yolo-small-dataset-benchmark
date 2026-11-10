@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 820" width="1500" height="820" role="img" aria-labelledby="t d" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title id="t">Training and evaluation workflow for one model</title><desc id="d">Pretrained weights are fine-tuned for up to 100 epochs; each epoch is validated on the 20-image validation split; early stopping and best-checkpoint selection both use that split; the test split is evaluated once.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C53030"/></marker></defs>
+<rect width="1500" height="820" fill="#FFFFFF"/>
+<text x="40" y="40" font-size="22" font-weight="700" text-anchor="start" fill="#1a202c">Training loop and where the data splits are used (repeated for each of the four models)</text>
+<rect x="40" y="90" width="250" height="120" rx="10" fill="#FFF4E0" stroke="#B7791F" stroke-width="2"/>
+<text x="165.0" y="114" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Pretrained weights</text>
+<text x="165.0" y="138.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">yolov8s / yolo11s /</text>
+<text x="165.0" y="157.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">yolo12s / yolo26s .pt</text>
+<text x="165.0" y="175.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">(COCO, 80 classes)</text>
+<rect x="350" y="90" width="250" height="120" rx="10" fill="#F1F5F9" stroke="#475569" stroke-width="2"/>
+<text x="475.0" y="114" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Replace head</text>
+<text x="475.0" y="138.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">2 classes: Good, Miss_Print;</text>
+<text x="475.0" y="157.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">class head re-initialised,</text>
+<text x="475.0" y="175.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">other matching layers kept</text>
+<rect x="660" y="90" width="270" height="120" rx="10" fill="#FFF4E0" stroke="#B7791F" stroke-width="2"/>
+<text x="795.0" y="114" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Train epoch</text>
+<text x="795.0" y="138.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">489 images, batch 4,</text>
+<text x="795.0" y="157.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">box + cls (+ dfl) loss,</text>
+<text x="795.0" y="175.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">AdamW lr 0.001, 640 px</text>
+<rect x="990" y="90" width="270" height="120" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="1125.0" y="114" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Validate epoch</text>
+<text x="1125.0" y="138.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">20 images / 27 boxes</text>
+<text x="1125.0" y="157.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">P, R, mAP@50, mAP@50:95</text>
+<text x="1125.0" y="175.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">val losses</text>
+<rect x="1310" y="90" width="150" height="120" rx="10" fill="#E8F1FB" stroke="#2B6CB0" stroke-width="2"/>
+<text x="1385.0" y="114" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Save</text>
+<text x="1385.0" y="137.5" font-size="12.5" font-weight="400" text-anchor="middle" fill="#4a5568">last.pt every</text>
+<text x="1385.0" y="155.0" font-size="12.5" font-weight="400" text-anchor="middle" fill="#4a5568">epoch; best.pt on</text>
+<text x="1385.0" y="172.5" font-size="12.5" font-weight="400" text-anchor="middle" fill="#4a5568">best fitness</text>
+<path d="M290,150 L346,150" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M600,150 L656,150" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M930,150 L986,150" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M1260,150 L1306,150" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M1385,90 L1385,66 L795,66 L795,86" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<text x="1090" y="60" font-size="12.5" font-weight="400" text-anchor="middle" fill="#4a5568" font-style="italic">next epoch (up to 100)</text>
+<rect x="660" y="320" width="600" height="120" rx="10" fill="#FDECEC" stroke="#C53030" stroke-width="2"/>
+<text x="960.0" y="344" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Early stopping check</text>
+<text x="960.0" y="368" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">patience 25: stop when fitness has not improved for 25 epochs</text>
+<text x="960.0" y="386" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">run lengths: YOLOv8s 51 (best 26) · YOLO11s 33 (best 8)</text>
+<text x="960.0" y="404" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">YOLO12s 72 (best 47) · YOLO26s 64 (best 39)</text>
+<path d="M1125,214 L1125,316" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<text x="1195" y="270" font-size="12.5" font-weight="400" text-anchor="middle" fill="#4a5568" font-style="italic">fitness each epoch</text>
+<rect x="40" y="320" width="540" height="120" rx="10" fill="#FFFFFF" stroke="#718096" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="310.0" y="344" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">What is held fixed across models</text>
+<text x="310.0" y="368" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">data, seed 42, optimizer AdamW, lr0 0.001, batch 4, image size 640,</text>
+<text x="310.0" y="386" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">patience 25, online augmentation off (mosaic, flips, HSV, scale = 0),</text>
+<text x="310.0" y="404" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">no hyper-parameter search; one run per model</text>
+<rect x="20" y="480" width="1460" height="300" rx="14" fill="#FAFBFC" stroke="#CBD5E0" stroke-width="1.5"/>
+<text x="36" y="506" font-size="15" font-weight="700" text-anchor="start" fill="#2D3748">After training</text>
+<rect x="40" y="525" width="270" height="120" rx="10" fill="#FFF4E0" stroke="#B7791F" stroke-width="2"/>
+<text x="175.0" y="549" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">best.pt</text>
+<text x="175.0" y="573.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">epoch with highest validation</text>
+<text x="175.0" y="592.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">fitness (0.1 mAP@50 +</text>
+<text x="175.0" y="610.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">0.9 mAP@50:95)</text>
+<rect x="370" y="525" width="300" height="120" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="520.0" y="549" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Test evaluation (once)</text>
+<text x="520.0" y="573.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">21 images / 29 boxes</text>
+<text x="520.0" y="592.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">model.val(split='test')</text>
+<text x="520.0" y="610.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">conf 0.001, IoU 0.7, 640 px</text>
+<rect x="730" y="525" width="330" height="120" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="895.0" y="549" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Point estimates</text>
+<text x="895.0" y="573.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">P, R, F1, mAP@50,</text>
+<text x="895.0" y="592.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">mAP@50:95, per-class table,</text>
+<text x="895.0" y="610.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">PR / F1 / confusion plots</text>
+<rect x="1120" y="525" width="340" height="120" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="1290.0" y="549" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Uncertainty</text>
+<text x="1290.0" y="573.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">bootstrap over 21 images:</text>
+<text x="1290.0" y="592.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">95 % CI and paired differences</text>
+<text x="1290.0" y="610.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">between models</text>
+<path d="M310,585 L366,585" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M670,585 L726,585" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M1060,585 L1116,585" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M795,440 L795,470 L175,470 L175,521" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<text x="480" y="462" font-size="12.5" font-weight="400" text-anchor="middle" fill="#4a5568" font-style="italic">stop: keep best.pt</text>
+<rect x="40" y="690" width="1420" height="70" rx="10" fill="#FDECEC" stroke="#C53030" stroke-width="2"/>
+<text x="750.0" y="713" font-size="15" font-weight="700" text-anchor="middle" fill="#1a202c">Selection effect to keep in mind</text>
+<text x="750.0" y="737.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">The validation split chooses both the stopping point and best.pt, so its scores are optimistic; only the test split is an unbiased (but very noisy) estimate.</text>
+</svg>

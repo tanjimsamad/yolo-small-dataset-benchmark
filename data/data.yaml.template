@@ -1,0 +1,7 @@
+# Copy to data/detection_ready/data.yaml after downloading the dataset (see data/README.md)
+path: .            # folder that contains train/ valid/ test/
+train: train/images
+val: valid/images
+test: test/images
+nc: 2
+names: [Good, Miss_Print]   # verify the order against your Roboflow export

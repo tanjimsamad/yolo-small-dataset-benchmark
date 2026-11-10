@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" width="1500" height="900" role="img" aria-labelledby="t d" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title id="t">End-to-end benchmark pipeline</title><desc id="d">Data preparation, training of four YOLO small models with one recipe, and evaluation with bootstrap confidence intervals.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C53030"/></marker></defs>
+<rect width="1500" height="900" fill="#FFFFFF"/>
+<text x="40" y="40" font-size="22" font-weight="700" text-anchor="start" fill="#1a202c">Project pipeline: four YOLO small models, one small custom dataset</text>
+<rect x="20" y="62" width="1460" height="230" rx="14" fill="#FAFBFC" stroke="#CBD5E0" stroke-width="1.5"/>
+<text x="36" y="88" font-size="15" font-weight="700" text-anchor="start" fill="#2D3748">1  Data preparation</text>
+<rect x="40" y="105" width="255" height="150" rx="10" fill="#E8F1FB" stroke="#2B6CB0" stroke-width="2"/>
+<text x="167.5" y="129" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Roboflow project</text>
+<text x="167.5" y="153.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">Fault_Detection_Model v2</text>
+<text x="167.5" y="172.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">bounding-box annotation</text>
+<text x="167.5" y="190.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">2 classes: Good, Miss_Print</text>
+<rect x="345" y="105" width="255" height="150" rx="10" fill="#F1F5F9" stroke="#475569" stroke-width="2"/>
+<text x="472.5" y="129" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Four YOLO exports</text>
+<text x="472.5" y="153.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">v8, v11, v12, v26 .zip</text>
+<text x="472.5" y="172.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">SHA-256 of every image and</text>
+<text x="472.5" y="190.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">label file compared: identical</text>
+<rect x="650" y="105" width="255" height="150" rx="10" fill="#E8F1FB" stroke="#2B6CB0" stroke-width="2"/>
+<text x="777.5" y="129" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">data/canonical</text>
+<text x="777.5" y="153.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">1,060 files (530 images</text>
+<text x="777.5" y="172.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">+ 530 label files)</text>
+<text x="777.5" y="190.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">extracted once, read-only</text>
+<rect x="955" y="105" width="255" height="150" rx="10" fill="#F1F5F9" stroke="#475569" stroke-width="2"/>
+<text x="1082.5" y="129" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Annotation audit</text>
+<text x="1082.5" y="153.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">checks class ids and [0,1] range;</text>
+<text x="1082.5" y="172.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">6 polygon labels converted</text>
+<text x="1082.5" y="190.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">to boxes (train split)</text>
+<rect x="1245" y="105" width="215" height="150" rx="10" fill="#E8F1FB" stroke="#2B6CB0" stroke-width="2"/>
+<text x="1352.5" y="129" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">detection_ready</text>
+<text x="1352.5" y="153.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">train 489 images</text>
+<text x="1352.5" y="172.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">valid 20 · test 21</text>
+<text x="1352.5" y="190.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">data.yaml (nc = 2)</text>
+<path d="M295,180 L341,180" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M600,180 L646,180" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M905,180 L951,180" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M1210,180 L1241,180" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="20" y="320" width="1460" height="250" rx="14" fill="#FAFBFC" stroke="#CBD5E0" stroke-width="1.5"/>
+<text x="36" y="346" font-size="15" font-weight="700" text-anchor="start" fill="#2D3748">2  Training</text>
+<rect x="40" y="365" width="255" height="170" rx="10" fill="#F1F5F9" stroke="#475569" stroke-width="2"/>
+<text x="167.5" y="389" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">EDA + compatibility</text>
+<text x="167.5" y="413.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">class balance, box size, all</text>
+<text x="167.5" y="432.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">images 640 x 640; all four</text>
+<text x="167.5" y="450.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">checkpoints load (READY)</text>
+<rect x="345" y="365" width="215" height="170" rx="10" fill="#F1F5F9" stroke="#475569" stroke-width="2"/>
+<text x="452.5" y="389" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Smoke test</text>
+<text x="452.5" y="413.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">YOLOv8s, 2 epochs,</text>
+<text x="452.5" y="432.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">checks GPU, paths,</text>
+<text x="452.5" y="450.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">data.yaml, memory</text>
+<rect x="610" y="365" width="160" height="105" rx="10" fill="#FFF4E0" stroke="#B7791F" stroke-width="2"/>
+<text x="690.0" y="389" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">YOLOv8s</text>
+<text x="690.0" y="413.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">COCO-pretrained</text>
+<text x="690.0" y="432.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">11.2 M params</text>
+<rect x="785" y="365" width="160" height="105" rx="10" fill="#FFF4E0" stroke="#B7791F" stroke-width="2"/>
+<text x="865.0" y="389" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">YOLO11s</text>
+<text x="865.0" y="413.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">COCO-pretrained</text>
+<text x="865.0" y="432.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">9.5 M params</text>
+<rect x="960" y="365" width="160" height="105" rx="10" fill="#FFF4E0" stroke="#B7791F" stroke-width="2"/>
+<text x="1040.0" y="389" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">YOLO12s</text>
+<text x="1040.0" y="413.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">COCO-pretrained</text>
+<text x="1040.0" y="432.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">9.3 M params</text>
+<rect x="1135" y="365" width="160" height="105" rx="10" fill="#FFF4E0" stroke="#B7791F" stroke-width="2"/>
+<text x="1215.0" y="389" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">YOLO26s</text>
+<text x="1215.0" y="413.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">COCO-pretrained</text>
+<text x="1215.0" y="432.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">10.0 M params</text>
+<rect x="610" y="485" width="685" height="66" rx="10" fill="#FFFFFF" stroke="#718096" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="952.5" y="507.5" font-size="14.5" font-weight="700" text-anchor="middle" fill="#1a202c">Identical recipe for all four</text>
+<text x="952.5" y="531.5" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">AdamW lr 0.001 · batch 4 · 640 px · patience 25 · seed 42 · online augmentation off</text>
+<rect x="1320" y="365" width="140" height="170" rx="10" fill="#FDECEC" stroke="#C53030" stroke-width="2"/>
+<text x="1390.0" y="389" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Early stop</text>
+<text x="1390.0" y="412.5" font-size="12.5" font-weight="400" text-anchor="middle" fill="#4a5568">best epoch +</text>
+<text x="1390.0" y="430.0" font-size="12.5" font-weight="400" text-anchor="middle" fill="#4a5568">25 epochs</text>
+<text x="1390.0" y="447.5" font-size="12.5" font-weight="400" text-anchor="middle" fill="#4a5568">(8s: 26 → 51)</text>
+<path d="M1352,255 L1352,300 L167,300 L167,360" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M295,450 L341,450" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M560,417 L606,417" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M1295,417 L1316,417" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="20" y="598" width="1460" height="280" rx="14" fill="#FAFBFC" stroke="#CBD5E0" stroke-width="1.5"/>
+<text x="36" y="624" font-size="15" font-weight="700" text-anchor="start" fill="#2D3748">3  Evaluation</text>
+<rect x="40" y="645" width="255" height="150" rx="10" fill="#FFF4E0" stroke="#B7791F" stroke-width="2"/>
+<text x="167.5" y="669" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">best.pt per model</text>
+<text x="167.5" y="693.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">checkpoint with the best</text>
+<text x="167.5" y="712.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">validation fitness</text>
+<text x="167.5" y="730.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">(20-image valid split)</text>
+<rect x="345" y="645" width="255" height="150" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="472.5" y="669" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Single test pass</text>
+<text x="472.5" y="693.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">model.val(split='test')</text>
+<text x="472.5" y="712.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">21 images · 29 boxes</text>
+<text x="472.5" y="730.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">never used for training</text>
+<rect x="650" y="645" width="275" height="150" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="787.5" y="669" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Metrics</text>
+<text x="787.5" y="693.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">Precision, Recall, F1,</text>
+<text x="787.5" y="712.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">mAP@50, mAP@50:95,</text>
+<text x="787.5" y="730.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">per class + PR / F1 / confusion</text>
+<rect x="975" y="645" width="255" height="150" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="1102.5" y="669" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Bootstrap CIs</text>
+<text x="1102.5" y="693.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">2,000 image resamples,</text>
+<text x="1102.5" y="712.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">paired model differences</text>
+<text x="1102.5" y="730.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">scripts/bootstrap_test_ci.py</text>
+<rect x="1280" y="645" width="180" height="150" rx="10" fill="#E8F1FB" stroke="#2B6CB0" stroke-width="2"/>
+<text x="1370.0" y="669" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Outputs</text>
+<text x="1370.0" y="693.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">reports/ figures</text>
+<text x="1370.0" y="712.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">results/ tables</text>
+<text x="1370.0" y="730.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">report PDF</text>
+<path d="M952,551 L952,580 L167,580 L167,640" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M295,720 L339,720" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M600,720 L644,720" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M925,720 L969,720" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M1230,720 L1274,720" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<text x="750" y="842" font-size="14" font-weight="400" text-anchor="middle" fill="#4a5568" font-style="italic">Test split is touched once per model; the validation split steers early stopping and checkpoint choice.</text>
+<text x="750" y="864" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568" font-style="italic">Numbers shown come from args.yaml, results.csv, yolo_compatibility.csv and annotation_audit.csv in this repository.</text>
+</svg>

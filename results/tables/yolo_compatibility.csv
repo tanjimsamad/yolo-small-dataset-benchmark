@@ -1,0 +1,5 @@
+Model,Checkpoint,Task,Parameters (M),Status
+YOLOv8,yolov8s.pt,detect,11.167,READY
+YOLO11,yolo11s.pt,detect,9.459,READY
+YOLO12,yolo12s.pt,detect,9.286,READY
+YOLO26,yolo26s.pt,detect,10.01,READY

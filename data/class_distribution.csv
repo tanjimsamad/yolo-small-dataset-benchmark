@@ -1,0 +1,7 @@
+split,class_id,class_name,instances
+train,0,Good,371
+train,1,Miss_Print,306
+valid,0,Good,15
+valid,1,Miss_Print,12
+test,0,Good,14
+test,1,Miss_Print,15

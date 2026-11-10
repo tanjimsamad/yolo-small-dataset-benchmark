@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 725" width="1500" height="725" role="img" aria-labelledby="t d" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title id="t">Dataset construction, splitting and offline augmentation</title><desc id="d">204 original photographs are split before augmentation; only the 163 training photographs are tripled by Roboflow, giving 489 training images. Validation and test contain one image per photograph.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C53030"/></marker></defs>
+<rect width="1500" height="725" fill="#FFFFFF"/>
+<text x="40" y="40" font-size="22" font-weight="700" text-anchor="start" fill="#1a202c">Where the 530 images come from, and how many are independent</text>
+<rect x="40" y="80" width="300" height="130" rx="10" fill="#E8F1FB" stroke="#2B6CB0" stroke-width="2"/>
+<text x="190.0" y="104" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">204 original photographs</text>
+<text x="190.0" y="128.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">pharmaceutical carton photographed</text>
+<text x="190.0" y="147.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">on different surfaces and angles,</text>
+<text x="190.0" y="165.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">labelled with boxes in Roboflow</text>
+<rect x="430" y="80" width="300" height="130" rx="10" fill="#F1F5F9" stroke="#475569" stroke-width="2"/>
+<text x="580.0" y="104" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Split by photograph</text>
+<text x="580.0" y="128.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">163 train · 20 valid · 21 test</text>
+<text x="580.0" y="147.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">no photograph appears in</text>
+<text x="580.0" y="165.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">two splits (0 shared name stems)</text>
+<path d="M340,145 L426,145" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="820" y="60" width="330" height="90" rx="10" fill="#FFF4E0" stroke="#B7791F" stroke-width="2"/>
+<text x="985.0" y="84" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">train: 163 photographs</text>
+<text x="985.0" y="108.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">Roboflow offline augmentation: 3 images</text>
+<text x="985.0" y="127.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">per photograph (rotation, noise seen)</text>
+<rect x="820" y="165" width="330" height="70" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="985.0" y="189" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">valid: 20 photographs</text>
+<text x="985.0" y="213" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">not augmented (one image each)</text>
+<rect x="820" y="250" width="330" height="70" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="985.0" y="274" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">test: 21 photographs</text>
+<text x="985.0" y="298" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">not augmented (one image each)</text>
+<path d="M730,135 L766,135 L766,105 L816,105" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M730,145 L766,145 L766,200 L816,200" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M730,155 L750,155 L750,285 L816,285" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="1230" y="60" width="240" height="90" rx="10" fill="#FFF4E0" stroke="#B7791F" stroke-width="2"/>
+<text x="1350.0" y="84" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">489 images</text>
+<text x="1350.0" y="108" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">677 objects</text>
+<text x="1350.0" y="126" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">371 Good · 306 Miss_Print</text>
+<rect x="1230" y="165" width="240" height="70" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="1350.0" y="189" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">20 images</text>
+<text x="1350.0" y="213" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">27 objects (15 / 12)</text>
+<rect x="1230" y="250" width="240" height="70" rx="10" fill="#E9F7EF" stroke="#2F855A" stroke-width="2"/>
+<text x="1350.0" y="274" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">21 images</text>
+<text x="1350.0" y="298" font-size="13" font-weight="400" text-anchor="middle" fill="#4a5568">29 objects (14 / 15)</text>
+<path d="M1150,105 L1226,105" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M1150,200 L1226,200" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M1150,285 L1226,285" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="20" y="360" width="1460" height="335" rx="14" fill="#FAFBFC" stroke="#CBD5E0" stroke-width="1.5"/>
+<text x="36" y="386" font-size="15" font-weight="700" text-anchor="start" fill="#2D3748">What this means for learning and for evaluation</text>
+<rect x="40" y="410" width="430" height="112" rx="10" fill="#FDECEC" stroke="#C53030" stroke-width="2"/>
+<text x="255.0" y="434" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Effective training set</text>
+<text x="255.0" y="458.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">489 files, but only 163 distinct scenes:</text>
+<text x="255.0" y="477.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">the 3 copies of a photograph share</text>
+<text x="255.0" y="495.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">the same object, background and label</text>
+<rect x="535" y="410" width="430" height="112" rx="10" fill="#FDECEC" stroke="#C53030" stroke-width="2"/>
+<text x="750.0" y="434" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Validation: 20 images</text>
+<text x="750.0" y="458.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">27 boxes decide early stopping and</text>
+<text x="750.0" y="477.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">which epoch becomes best.pt;</text>
+<text x="750.0" y="495.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">one missed box moves recall by 3.7 points</text>
+<rect x="1030" y="410" width="430" height="112" rx="10" fill="#FDECEC" stroke="#C53030" stroke-width="2"/>
+<text x="1245.0" y="434" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Test: 21 images</text>
+<text x="1245.0" y="458.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">29 boxes give every metric;</text>
+<text x="1245.0" y="477.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">one missed box moves recall by 3.4 points</text>
+<text x="1245.0" y="495.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">95 % CI of mAP@50:95 is about ±0.1</text>
+<path d="M255,522 L255,572" fill="none" stroke="#C53030" stroke-width="2" marker-end="url(#ahr)"/>
+<path d="M750,522 L750,572" fill="none" stroke="#C53030" stroke-width="2" marker-end="url(#ahr)"/>
+<path d="M1245,522 L1245,572" fill="none" stroke="#C53030" stroke-width="2" marker-end="url(#ahr)"/>
+<rect x="40" y="575" width="430" height="95" rx="10" fill="#FFFFFF" stroke="#718096" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="255.0" y="599" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Risk: memorisation</text>
+<text x="255.0" y="623.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">train loss keeps falling while</text>
+<text x="255.0" y="642.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">validation loss stalls (figure A)</text>
+<rect x="535" y="575" width="430" height="95" rx="10" fill="#FFFFFF" stroke="#718096" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="750.0" y="599" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Risk: noisy model selection</text>
+<text x="750.0" y="623.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">largest epoch-to-epoch jump in val</text>
+<text x="750.0" y="642.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">mAP@50:95: 0.07-0.19 per model</text>
+<rect x="1030" y="575" width="430" height="95" rx="10" fill="#FFFFFF" stroke="#718096" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="1245.0" y="599" font-size="16" font-weight="700" text-anchor="middle" fill="#1a202c">Risk: unstable ranking</text>
+<text x="1245.0" y="623.5" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">12s and 26s are not separable;</text>
+<text x="1245.0" y="642.0" font-size="13.5" font-weight="400" text-anchor="middle" fill="#4a5568">8s and 11s are not separable</text>
+</svg>
